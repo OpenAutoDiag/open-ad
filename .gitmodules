@@ -1,0 +1,6 @@
+[submodule "open-uds"]
+	path = open-uds
+	url = git@github.com:OpenAutoDiag/open-uds.git
+[submodule "open-doip"]
+	path = open-doip
+	url = git@github.com:OpenAutoDiag/open-doip.git
