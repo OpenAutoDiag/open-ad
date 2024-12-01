@@ -1,0 +1,29 @@
+[package]
+name = "open-uds"
+version = "0.1.0"
+edition = "2021"
+license = "MIT"
+description = "The open-uds is an open-source Unified Diagnostic Services (UDS) implementation in Rust."
+homepage = "http://openautodiag.org"
+repository = "https://github.com/OpenAutoDiag/open-uds"
+readme = "README.md"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[lib]
+name = "open_uds"
+path = "src/lib.rs"
+
+[[bin]]
+name = "open-uds-cli"
+path = "src/main.rs"
+
+[dependencies]
+open-doip = { path = "../open-doip" }
+strum = "0.26.3"
+strum_macros = "0.26.4"
+tokio = { version = "1", features = ["full"] }
+thiserror = "1.0.61"
+mockall = "0.12.1"
+mockall_double = "0.3.1"
+async-trait = "0.1.80"
