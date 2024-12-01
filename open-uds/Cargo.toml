@@ -1,6 +1,6 @@
 [package]
 name = "open-uds"
-version = "0.1.0"
+version = "0.1.1"
 edition = "2021"
 license = "MIT"
 description = "The open-uds is an open-source Unified Diagnostic Services (UDS) implementation in Rust."
@@ -19,7 +19,7 @@ name = "open-uds-cli"
 path = "src/main.rs"
 
 [dependencies]
-open-doip = { path = "../open-doip" }
+open-doip = { version = "0.1.0", path = "../open-doip" }
 strum = "0.26.3"
 strum_macros = "0.26.4"
 tokio = { version = "1", features = ["full"] }
