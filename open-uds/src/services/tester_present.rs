@@ -25,6 +25,7 @@ use crate::{
 use super::ServiceId;
 
 /// The TesterPresent (`0x3E`) service implementation.
+#[derive(Default)]
 pub struct TesterPresent;
 
 impl TesterPresent {

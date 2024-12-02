@@ -6,7 +6,7 @@ macro_rules! try_negative_response {
             $reader.read_exact(&mut nrc_data)?;
 
             return Ok(UdsResponse::Negative(
-                crate::nrc::NegativeResponseCode::try_from(nrc_data[1])?,
+                $crate::nrc::NegativeResponseCode::try_from(nrc_data[1])?,
             ));
         }
     };

@@ -18,6 +18,7 @@ use crate::{
 };
 
 /// ECUReset (`0x11`) service implementation.
+#[derive(Default)]
 pub struct EcuReset;
 
 impl EcuReset {

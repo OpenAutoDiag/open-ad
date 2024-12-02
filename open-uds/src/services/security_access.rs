@@ -34,6 +34,7 @@ use crate::{
 use super::ServiceId;
 
 /// Security Accesss (`0x27`) service implementation.
+#[derive(Default)]
 pub struct SecurityAccess;
 
 impl SecurityAccess {
@@ -113,7 +114,7 @@ impl SecurityAccess {
         data_record: Option<Vec<u8>>,
         timeout: Option<Duration>,
     ) -> Result<UdsResponse<SecurityAccessSeed>, ClientError> {
-        let data_record = data_record.unwrap_or(vec![]);
+        let data_record = data_record.unwrap_or_default();
 
         let raw_response = client
             .lock()
@@ -403,7 +404,7 @@ mod tests {
             .await
             .expect_send_request()
             .withf(|_, subfunction, data, timeout| {
-                *subfunction == 2 && *data == vec![0xDE, 0xAD, 0xBE, 0xEF] && *timeout == None
+                *subfunction == 2 && *data == vec![0xDE, 0xAD, 0xBE, 0xEF] && timeout.is_none()
             })
             .returning(|_, _, _, _| {
                 Ok(vec![
