@@ -22,7 +22,7 @@ jobs:
     - name: Build
       run: cargo build --verbose
     - name: Run clipy
-      run: cargo clippy -- -Dwarnings
+      run: cargo clippy --workspace --all-targets --no-deps -- -D warnings
     - name: Run tests
       run: cargo test --verbose
     - name: Check format
