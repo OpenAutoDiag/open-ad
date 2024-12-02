@@ -27,3 +27,5 @@ jobs:
       run: cargo test --verbose
     - name: Check format
       run: cargo fmt --check
+    - name: Check Docs
+      run: cargo doc
